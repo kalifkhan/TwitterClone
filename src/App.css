@@ -1,0 +1,18 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.app{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: grid;
+    grid-template-columns: 0.6fr auto ; 
+    height: 100vh;
+    background: #dad6d6;
+    color: white;
+}
+
+.right-pane{
+  background: #15202b;
+}
+

@@ -1,0 +1,145 @@
+.left-pane {
+
+    background: #15202b;
+    color: #fff;
+
+    width:  300px;
+}
+.header-container{
+    
+    margin: 10px;
+    padding: 10px;
+    
+}
+.header-container > span {
+    position: fixed;
+   left: 15px;
+}
+
+header svg{
+    height: 2em;
+   
+}
+nav svg{
+    height: 0.7em;
+}
+
+.nav-list-item {
+    display: grid;
+    grid-column: auto;
+    /* Use Flexbox layout */
+    padding: 10px;
+    margin: 20px;
+    font-size: 30px;
+    font-weight: 500;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.navlink-item {
+    background-color: #fff;
+    background: #15202b;
+    padding-left: 20px;
+    /* Adjust padding as neede*/
+    margin: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    border-radius: 20px;
+    box-sizing: border-box;
+    color: white;
+    
+
+}
+.navlink-item:hover {
+    background-color: #1da1f2;
+    border-radius: 1.5em;
+
+  }
+/* .user-img {
+    width: 40px;
+    height: 40px;
+} */
+.tweet{
+    
+    height: 3em;
+    color: #fff;
+    background: #1da1f2;
+    font-size: 1em;
+    border-radius: 1.5em;
+    margin-top: 0.5em;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    width: 150px;
+    cursor: pointer;
+
+    &:hover{
+        background: #75b9e3;
+    }
+}
+
+footer{
+    position: fixed;
+    bottom: 1.5em;
+    margin-left: 0.5em;
+    width: 150px;
+    left: 20px;
+    
+    
+
+    button.account{
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        align-items: center;
+        color: #fff;
+        font-size: 1em;
+        background: none;
+        align-items: start;
+        border: none;
+        
+        .photo{
+           
+            height: 2.5em;
+            width: 2em;
+            object-fit: cover;
+            
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 100%;
+
+        }
+        .name , .id {
+            font-weight: 700;  
+            align-items: start;
+            padding: 2px;  
+            display: flex;
+            align-items: start;  
+        
+            font-weight: 700;
+            display: flex;
+            align-items: start;
+        }
+    }
+   
+}
+
+
+.btn-singup{
+    margin-left: 20px;
+}
+
+.container-logout{
+    margin-left: 10%;
+}
+.btn-logout{
+    width: 100px;
+    height: 30px;
+    background-color: rgb(126, 178, 229);
+    border-radius: 5px;
+    border: none;
+    &:hover{
+        background-color: rgb(116, 96, 244);
+    }
+}
