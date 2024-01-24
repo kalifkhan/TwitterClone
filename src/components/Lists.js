@@ -15,7 +15,7 @@ const Lists = () => {
   return (
     <div className='listcontainer'>
      { curTwwites.id ? <div className='listitemcontainer'>
-     { ListOfTwittes.map( (tw)=> <Card content={tw.msg} > </Card> )} 
+     { ListOfTwittes.map( (tw)=> <Card content={tw.msg} id={tw.id} > </Card> )} 
      </div> 
      :  <div style={{ color: 'red' ,  fontSize: '30px', fontWeight:'700', marginTop:'40px' }}> List Items is Empty </div> }
     </div>

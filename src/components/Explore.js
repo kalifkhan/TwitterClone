@@ -2,6 +2,7 @@ import React, { Children, useState } from 'react'
 import './addNewTwitte.css';
 import newTwitterContext from './ContextList/TwitterContext';
 import { useNewTwitteContext } from './ContextList/TwitterContext';
+import { v4 as uuidv4 } from 'uuid';
 
 const Explore = () => {
   
@@ -12,7 +13,7 @@ const Explore = () => {
   const handleForm = (e) => {
     e.preventDefault();
     updateCurTwwites({
-      id: '1',
+      id: uuidv4(),
       msg: newTw
     });
     setNewt('');

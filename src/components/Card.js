@@ -1,15 +1,20 @@
 import React, { useState } from 'react'
 // import './Home.css'
 import './card.css'
-
+import { useNewTwitteContext } from './ContextList/TwitterContext';
 import { twitterIcon, messageIcon, retweetIcon, likesIcon } from './leftPane/icons';
 
 export const Card = ({ title, content, id }) => {
     const [like, setLike] = useState(false);
+    const { updateHitLikes} = useNewTwitteContext();
 
     //const truncatedContent= content.slice( 0 , 73);
-    const handleLikes = () => {
-        setLike(!like)    
+    const handleLikes = (id) => {
+
+        setLike(!like);
+        
+        updateHitLikes(id); 
+        console.log(id);
     }
 
     return (
@@ -22,7 +27,7 @@ export const Card = ({ title, content, id }) => {
                 <span className='svgicons'>
                     <span>{messageIcon}</span>
                     <span> {retweetIcon}</span>
-                    <span className={like ? "likesicon" : ""} onClick={handleLikes}> {likesIcon}  </span>
+                    <span className={like ? "likesicon" : ""} onClick={()=>handleLikes(id)}> {likesIcon}  </span>
                 </span>
             </div>
         </div>
