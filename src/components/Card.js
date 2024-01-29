@@ -6,24 +6,16 @@ import { twitterIcon, messageIcon, retweetIcon, likesIcon } from './leftPane/ico
 export const Card = ({ title, content, id }) => {
   const [like, setLike] = useState(true);
   const { updateHitLikes } = useNewTwitteContext();
-  const [bookMarkedList, setBookmarked] = useState([]);
+  //const [bookMarkedList, setBookmarked] = useState([]);
   const { hitLikes, ListOfTwittes } = useNewTwitteContext();
 
   const updatingLiked = (id) => {
-    
-      const listupdatelikes = ListOfTwittes.find(item => item.id === id);
-      setBookmarked((prev) => [...prev , listupdatelikes]);
-    //console.log(listupdatelikes);
+    //dispatch
   }
 
   const deletingLiked = (id) => {
-    const xx = bookMarkedList.filter(item => item.id !== id);
-    setBookmarked(xx);
-    console.log("deleting called");
+    //dispatch
   }
-
-  console.log(bookMarkedList);
-
   const handleLikes = (id) => {
     setLike(!like);
     if (like) {
