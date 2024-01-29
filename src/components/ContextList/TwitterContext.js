@@ -7,11 +7,11 @@ export const useNewTwitteContext = () => useContext(newTwitterContext);
 export const MyTProvider = (props) => {
   const [ListOfTwittes, setListofTwittes] = useState([]);
   const [curTwwites, setCurTwwites] = useState({});
-  const [hitLikes , setHitLikes] = useState([]);
+  const [hitLikes , setHitLikes] = useState();
 
 
   const updateHitLikes=(newV)=>{
-    setHitLikes( (prev) => [...prev , newV]);
+    setHitLikes(newV);
 
   }
   const updateCurTwwites = (newValues) => {
@@ -23,7 +23,7 @@ export const MyTProvider = (props) => {
     }       
   } , [curTwwites])
 
-  console.log(hitLikes);
+
 
   return (
     <newTwitterContext.Provider value={{curTwwites ,ListOfTwittes ,  updateCurTwwites , updateHitLikes , hitLikes }}>
