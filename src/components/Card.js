@@ -3,24 +3,26 @@ import './card.css';
 import { useNewTwitteContext } from './ContextList/TwitterContext';
 import { twitterIcon, messageIcon, retweetIcon, likesIcon } from './leftPane/icons';
 
-export const Card = ({ title, content, id }) => {
+export const Card = ({ title, content, id , islike}) => {
   const [like, setLike] = useState(true);
   const { updateHitLikes } = useNewTwitteContext();
   //const [bookMarkedList, setBookmarked] = useState([]);
-  const { hitLikes, ListOfTwittes } = useNewTwitteContext();
+  const { hitLikes, ListOfTwittes , state , dispatch } = useNewTwitteContext();
 
   const updatingLiked = (id) => {
-    //dispatch
+    dispatch( {type: "ADDLIKES" , payload: id , red: true , content: content})
   }
 
   const deletingLiked = (id) => {
-    //dispatch
+    dispatch( {type: "DELETELIKES" , payload: id})
   }
+
   const handleLikes = (id) => {
     setLike(!like);
     if (like) {
       updatingLiked(id);
-    } else {
+
+    } else {    
       deletingLiked(id);
     }
   }
@@ -33,7 +35,7 @@ export const Card = ({ title, content, id }) => {
         <span className='svgicons'>
           <span>{messageIcon}</span>
           <span> {retweetIcon}</span>
-          <span className={!like ? "likesicon" : ""} onClick={() => handleLikes(id)}> {likesIcon}  </span>
+          <span className={islike ? "likesicon" : ""} onClick={() => handleLikes(id)}> {likesIcon}  </span>
         </span>
       </div>
     </div>

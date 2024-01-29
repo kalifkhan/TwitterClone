@@ -1,11 +1,10 @@
 import React  , { useEffect , useState} from 'react'
 import { useNewTwitteContext } from './ContextList/TwitterContext'
-import { Card } from './Card';
-
+import { Book } from './Book';
 const Bookmarks = () => {
   //const [bookMarkedList , setBookmarked] = useState([])
-  const {hitLikes , ListOfTwittes } = useNewTwitteContext();
-
+  const {hitLikes , ListOfTwittes , state} = useNewTwitteContext();
+  console.log(state);
   // useEffect( ()=>{
   //     const listLikes = ListOfTwittes.filter(item => item.id == hitLikes)
   //     console.log(listLikes + " likes object or just id ")
@@ -15,7 +14,7 @@ const Bookmarks = () => {
   return (
     <div>Bookmarks
 
-      {/* { bookMarkedList.map( (tw) => <Card content ={tw.msg} id={tw.id}>  </Card> )} */}
+      { state.likesList.map( (tw) => <Book content ="good afternoon" id="jhfreiurf">  </Book> )}
 
     </div>
   )

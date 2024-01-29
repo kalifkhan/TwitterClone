@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 const Explore = () => {
   
-  const { curTwwites, updateCurTwwites } = useNewTwitteContext();
+  const { curTwwites, updateCurTwwites , dispatch } = useNewTwitteContext();
   
   const [newTw, setNewt] = useState('');
 
@@ -14,11 +14,18 @@ const Explore = () => {
     e.preventDefault();
     updateCurTwwites({
       id: uuidv4(),
-      msg: newTw
+      msg: newTw,
+      like : false
     });
+    const newTW = {
+      id: uuidv4(),
+      msg: newTw,
+      islike : false
+    }
+    dispatch( { type: "ADDTWITTES" , payload: newTW} )
     setNewt('');
   };
-  //console.log(newTwitte);
+  
 
   return (
     <div className='addnewT-container'>
