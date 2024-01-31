@@ -1,0 +1,50 @@
+.rightpaneContainer{
+    background: #15202b;
+}
+.whotofollow{
+    width: 260px;
+    height: 240px;
+    background-color: rgb(241, 158, 158);
+    background: #d3deee;
+    position: relative;
+    top: 10%;
+    left: 10%;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+.title{
+    border-bottom: 1px solid rgb(168, 13, 13);
+    padding: 4px;
+    font-weight: bold;
+    color: black;
+}
+.userDetails{
+    display: flex;
+    margin: 3px;
+    box-sizing: border-box;
+    border-bottom: 1px solid purple;
+    padding: 3px;
+    width: 100%;
+    gap: 3%;;
+    
+}
+.userDetails img {
+    width: 49px;
+    height: 49px;
+    border-radius: 50%;
+    margin-right: 3px;
+}
+.userDetails p{
+    color: black;
+    font-weight: bold;
+}
+.followBtn{
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: rgb(199, 231, 168);
+    height: 40px;
+    width: 60px;
+    padding: 5px;
+    cursor: pointer;
+}

@@ -1,8 +1,10 @@
 .card-container {
-    background-color: rgb(245, 246, 239);
+    background-color: #f5f8fa;
     width: 400px;
     height: 300px;
-    position: relative; /* Ensure absolute positioning works relative to this container */
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .card-block {
@@ -10,72 +12,68 @@
     display: flex;
     flex-direction: column;
     text-align: justify;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    border-radius: 4px;
-    background: rgb(45, 55, 66);
-    cursor: pointer;
-    width: 350px;
-    height: 250px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: #fff;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
-    margin: 25px;
-    transition: transform 0.3s ease; /* Add smooth transition on hover */
+    padding: 20px;
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .card-block:hover {
-    transform: translate(3px, 3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .card-username {
-    font-size: larger;
-    padding: 3px;
-    border-bottom: 2px solid rgb(60, 7, 252);
+    font-size: 1.2em;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
     display: flex;
     align-items: center;
+    color: #333;
 }
 
 .card-username svg {
-    height: 1.3em;
-    margin-left: 10px; /* Adjusted margin */
+    height: 1.5em;
+    margin-left: 10px;
+    fill: #1da1f2; /* Twitter's brand color */
 }
 
 .card-title {
     font-style: italic;
-    color: rgb(239, 212, 204);
+    color: #777;
     font-weight: 700;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     display: block;
-    margin-left: 3px;
+    margin: 5px 0;
 }
 
 .card-title:hover {
-    text-decoration: line-through;
+    text-decoration: underline;
 }
 
 .card-content {
-    color: rgb(217, 249, 249);
-    font-stretch: normal;
-    font-style: oblique 23deg;
-    padding: 3px;
-    margin-bottom: 38px;
+    color: #333;
+    font-size: 18px;
+    padding: 10px 0;
     overflow: hidden;
-    margin-left: 5px;
-    margin-right: 5px;
+    font-weight: bold;
 }
 
 .svgicons {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: min-content;
+    margin-top: 40%;
     display: flex;
-    gap: 30%;
+    fill: red;
+    gap: 20%;
+    align-items: center;
 }
 
 .svgicons > span {
     padding: 3px;
-    align-self: flex-end;
+    cursor: pointer;
 }
 
 .likesicon svg {
-    fill: red;
+    fill: red; /* Twitter's like color */
 }

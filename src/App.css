@@ -6,7 +6,7 @@
 .app{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: grid;
-    grid-template-columns: 0.6fr auto ; 
+    grid-template-columns: 0.6fr 1fr 0.6fr ; 
     height: 100vh;
     background: #dad6d6;
     color: white;
@@ -16,3 +16,6 @@
   background: #15202b;
 }
 
+.rightside{
+  background-color: rgb(29, 55, 95);
+}

@@ -1,12 +1,9 @@
 .listcontainer{
     overflow: auto;
-    width: 99%;
-    height: 100vh;
 }
 
 .listitemcontainer {
-    display: grid;
-    grid-template-columns: 0.5fr 0.5fr;
+    grid-template-columns: 0.2fr 0.2fr;
     gap: 3%;
     color: rgb(248, 238, 238);
     padding: 20px;

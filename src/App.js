@@ -11,6 +11,7 @@ import SignInSide from './Auth/SignInSide';
 import { Loading } from './components/ErrorPages/Loading.js';
 import { SettingsCellOutlined } from '@mui/icons-material';
 import { MyTProvider } from './components/ContextList/TwitterContext.js';
+import { RightPane } from './components/RightPane/RightPane.js';
 const HomeC = lazy( ()=>import('./components/Home.js'));
 const LeftPaneC = lazy( ()=> (import('./components/leftPane/LeftPane.js')));
 const ExploreC = lazy( ()=>(import('./components/Explore.js')));
@@ -40,7 +41,8 @@ function App() {
             <Route path='/lists' element={  <Lists /> } />
             <Route path='/profile' element={<Profile />} />
             <Route path='/signup' element={ <SignInSide />} />
-        </Routes>      
+        </Routes>  
+        <RightPane> </RightPane>
       </div>) : <SignInSide setIsAuthenticated={setIsAuthenticated} />}
       </MyTProvider>
     </BrowserRouter>
