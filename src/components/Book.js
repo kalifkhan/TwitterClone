@@ -3,7 +3,7 @@ import './Book.css';
 
 export const Book = ({ content, id }) => {
     return (
-        <div className='bookContainer'>Book
+        <div className='bookContainer'>
             <div className='bookItem'>
             <div className='bookId'>
                 {id}

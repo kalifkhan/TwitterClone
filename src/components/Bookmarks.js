@@ -1,21 +1,24 @@
 import React  , { useEffect , useState} from 'react'
 import { useNewTwitteContext } from './ContextList/TwitterContext'
 import { Book } from './Book';
+import './Book.css'
 const Bookmarks = () => {
-  //const [bookMarkedList , setBookmarked] = useState([])
+  const [bookMarkedList , setBookmarked] = useState([])
   const {hitLikes , ListOfTwittes , state} = useNewTwitteContext();
-  console.log(state);
-  // useEffect( ()=>{
-  //     const listLikes = ListOfTwittes.filter(item => item.id == hitLikes)
-  //     console.log(listLikes + " likes object or just id ")
-  //     setBookmarked((prev) => [...prev , listLikes]);
-  // }, [hitLikes])
+  
+  const {allTwittes } = state;
+  console.log(allTwittes);
 
+    useEffect( ()=>{
+          const likesOfTwittes = allTwittes.filter((item) => item.islike == true);
+          setBookmarked(likesOfTwittes);
+
+    } ,[])
+
+    console.log(bookMarkedList)
   return (
-    <div>Bookmarks
-
-      { state.likesList.map( (tw) => <Book content ="good afternoon" id="jhfreiurf">  </Book> )}
-
+    <div className='bookmarkConatiner'>Bookmarks
+      {bookMarkedList.map( (tw) => <Book content ={tw.msg} id={tw.id}>  </Book> )}
     </div>
   )
 }

@@ -9,10 +9,7 @@ const Lists = () => {
 
   const {curTwwites} = useNewTwitteContext();
   const { state} = useNewTwitteContext();
-  
   const listTw = state.allTwittes;
-
-  console.log(listTw);
 
   return (
     <div className='listcontainer'>

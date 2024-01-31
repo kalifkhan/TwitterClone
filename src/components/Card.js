@@ -10,18 +10,18 @@ export const Card = ({ title, content, id , islike}) => {
   const { hitLikes, ListOfTwittes , state , dispatch } = useNewTwitteContext();
 
   const updatingLiked = (id) => {
-    dispatch( {type: "ADDLIKES" , payload: id , red: true , content: content})
+    // dispatch( {type: "ADDLIKES" , payload: id , red: true , content: content})
+    dispatch( { type: "ADDLIKESTOBOOKLIST" , id: id , islikevalue : true} )
   }
 
   const deletingLiked = (id) => {
-    dispatch( {type: "DELETELIKES" , payload: id})
+    dispatch( { type: "ADDLIKESTOBOOKLIST" , id: id , islikevalue : false} )
   }
 
   const handleLikes = (id) => {
     setLike(!like);
     if (like) {
       updatingLiked(id);
-
     } else {    
       deletingLiked(id);
     }

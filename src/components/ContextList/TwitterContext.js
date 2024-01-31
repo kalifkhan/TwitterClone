@@ -21,6 +21,22 @@ const reducer = (state, action) => {
       allTwittes : [...state.allTwittes , action.payload]
     }
   }
+  else if(action.type == "ADDLIKESTOBOOKLIST"){
+      const IndexofItem = state.allTwittes.findIndex( (item) => item.id == action.id);
+      if(IndexofItem !== -1){
+        const updatingItem = {
+          ...state.allTwittes[IndexofItem],
+          islike: action.islikevalue
+        }
+
+        const updatedTwitties = [ ...state.allTwittes];
+        updatedTwitties[IndexofItem] = updatingItem;
+
+        return { ...state , allTwittes : updatedTwitties}
+      }else{
+        return state;
+      }   
+  }
     else{
       return state
     }
