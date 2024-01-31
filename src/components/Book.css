@@ -1,31 +1,38 @@
-.bookContainer{
+.bookContainer {
     display: flex;
     flex-direction: column;
     margin: 20px;
-}
-.bookItem{
+  }
+  
+  .bookItem {
     width: 200px;
     height: 100px;
-    background-color: rgb(33, 32, 31);
+    background-color: #2d2d2d; /* Dark background color */
     padding: 10px;
     display: flex;
     flex-direction: column;
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
-    border: 4px solid rgb(249, 128, 128);
-    border-radius: 5px;
+    border: 2px solid #f08080; /* Light border color */
+    border-radius: 8px;
     cursor: pointer;
-}
-.bookId{
+    transition: transform 0.3s ease; /* Add smooth transition on hover */
+  }
+  
+  .bookItem:hover {
+    transform: scale(1.05); /* Scale up on hover */
+  }
+  
+  .bookId {
     margin: 2px;
-    color: chocolate;
-}
-.bookContent{
+    color: #d2691e; /* Chocolate color */
+    font-weight: bold;
+  }
+  
+  .bookContent {
     margin: 2px;
-    color: rgb(10, 10, 240);
-
-}
-.bookmarkConatiner{
-    
-}
+    color: #0a0af0; /* Dark blue color */
+  }
+  
+  .bookmarkContainer {
+    /* Add additional styles for the bookmark container if needed */
+  }
+  
