@@ -10,19 +10,26 @@ import { useEffect, useState } from 'react';
 import SignInSide from './Auth/SignInSide';
 import { Loading } from './components/ErrorPages/Loading.js';
 import { SettingsCellOutlined } from '@mui/icons-material';
-import { MyTProvider } from './components/ContextList/TwitterContext.js';
+import { MyTProvider, useNewTwitteContext } from './components/ContextList/TwitterContext.js';
 import { RightPane } from './components/RightPane/RightPane.js';
 const HomeC = lazy( ()=>import('./components/Home.js'));
 const LeftPaneC = lazy( ()=> (import('./components/leftPane/LeftPane.js')));
 const ExploreC = lazy( ()=>(import('./components/Explore.js')));
 
-export const usname = localStorage.getItem('username')
 // export const Username = localStorage.getItem('username');
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  // const {state , dispatch } = useNewTwitteContext
+  const { dispatch } = useNewTwitteContext();
+
   useEffect(() => {
     const storedLoginStatus = JSON.parse(localStorage.getItem('loginSuccess'));
+    const username = JSON.parse(localStorage.getItem('loginSuccess'));
     setIsAuthenticated(!!storedLoginStatus);
+    if(storedLoginStatus){
+      // dispatch( {type: "ADDUSERNAME" , payload: username})
+      dispatch( { type: "ADDUSERNAME" , payload: username} )
+    }
   }, [])
   
 
