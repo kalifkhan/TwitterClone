@@ -6,6 +6,12 @@ import SignInSide from '../../Auth/SignInSide';
 import { LogOut } from '../../Auth/AuthLogout';
 import { Navigate } from 'react-router-dom';
 import { Padding } from '@mui/icons-material';
+import { usname } from '../../App';
+import { useNewTwitteContext } from '../ContextList/TwitterContext';
+
+export const Username = localStorage.getItem('username');
+// console.log(checklocalstai)
+
 const btnMew = {
     background: '#15202b',
     padding: '3px',  // Use camelCase for 'padding'
@@ -19,8 +25,12 @@ const btnMew = {
   };
 
 
-const LeftPane = ({setIsAuthenticated}) => {
 
+const LeftPane = ({setIsAuthenticated}) => {
+    const { state} = useNewTwitteContext();
+    const usname = state.userName;
+
+    console.log(usname);
     const handleLogout=()=>{
         const logoutValue = LogOut();
         setIsAuthenticated(logoutValue)
@@ -56,8 +66,8 @@ const LeftPane = ({setIsAuthenticated}) => {
                             <img className='user-img' alt="user" src="https://w0.peakpx.com/wallpaper/67/297/HD-wallpaper-shah-rukh-khan-tie-srk-thumbnail.jpg" />
                         </div>
                         <div>
-                            <div className='name'> Kalifkhan </div>
-                            <div className='id'> @kalifkhan_kk </div>
+                            <div className='name'> {Username} {usname} </div>
+                            <div className='id'> {Username}{"@121"} </div>
                         </div>
                     </button>
                 </footer>

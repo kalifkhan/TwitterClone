@@ -45,7 +45,8 @@ const reducer = (state, action) => {
 
 const intiailState = {
   likesList: [],
-  allTwittes: []
+  allTwittes: [],
+  userName: localStorage.getItem('username')
 };
 
 

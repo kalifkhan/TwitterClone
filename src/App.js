@@ -16,14 +16,16 @@ const HomeC = lazy( ()=>import('./components/Home.js'));
 const LeftPaneC = lazy( ()=> (import('./components/leftPane/LeftPane.js')));
 const ExploreC = lazy( ()=>(import('./components/Explore.js')));
 
-
+export const usname = localStorage.getItem('username')
+// export const Username = localStorage.getItem('username');
 function App() {
-  
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   useEffect(() => {
     const storedLoginStatus = JSON.parse(localStorage.getItem('loginSuccess'));
     setIsAuthenticated(!!storedLoginStatus);
-  }, []);
+  }, [])
+  
+
   return (
     <Suspense fallback={ <Loading />} >
     <BrowserRouter>
