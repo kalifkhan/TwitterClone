@@ -20,16 +20,16 @@ const ExploreC = lazy( ()=>(import('./components/Explore.js')));
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   // const {state , dispatch } = useNewTwitteContext
-  const { dispatch } = useNewTwitteContext();
+  // const { dispatch } = useNewTwitteContext();
 
   useEffect(() => {
     const storedLoginStatus = JSON.parse(localStorage.getItem('loginSuccess'));
     const username = JSON.parse(localStorage.getItem('loginSuccess'));
     setIsAuthenticated(!!storedLoginStatus);
-    if(storedLoginStatus){
-      // dispatch( {type: "ADDUSERNAME" , payload: username})
-      dispatch( { type: "ADDUSERNAME" , payload: username} )
-    }
+    // if(storedLoginStatus){ 
+    //   // dispatch( {type: "ADDUSERNAME" , payload: username})
+    //   dispatch( { type: "ADDUSERNAME" , payload: username} )
+    // }
   }, [])
   
 

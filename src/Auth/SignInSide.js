@@ -1,19 +1,3 @@
-// import React from 'react'
-// import './LoginPage.css';
-
-// export const LoginPage = () => {
-//   return (
-//     <div>LoginPage
-//         <div className='login-container'> 
-//             <div className='content-container'> <forn> 
-//                 <label> Enter UserName: </label>
-//                 <input className='userName' type='text'  />
-//                 <label> Enter Password: </label>
-//                 <input  className='password' type='password '/>
-//                 </forn>  </div>
-//         </div>
-//     </div>
-//   )
 
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
@@ -30,6 +14,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { redirect, useNavigate } from 'react-router-dom';
+import { useNewTwitteContext } from '../components/ContextList/TwitterContext';
 
 function Copyright(props) {
   return (
@@ -49,6 +34,7 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function SignInSide({ setIsAuthenticated }) {
+  const {state , dispatch} = useNewTwitteContext();
 
   const [username, setUserName] = React.useState();
   const [pwd, setPsd] = React.useState();
@@ -73,6 +59,7 @@ export default function SignInSide({ setIsAuthenticated }) {
     if (username && pwd) {
       localStorage.setItem("username", username)
       localStorage.setItem("loginSuccess", loginSuccess.toString());
+      dispatch({type: "ADDUSERNAME" , payload: username})
       setIsAuthenticated(true);
     }
 

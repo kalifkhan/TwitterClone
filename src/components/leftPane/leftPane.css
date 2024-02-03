@@ -76,19 +76,15 @@ nav svg{
         background: #75b9e3;
     }
 }
-
 footer{
     position: fixed;
     bottom: 1.5em;
     margin-left: 0.5em;
     width: 150px;
     left: 20px;
-    
-    
-
     button.account{
         display: grid;
-        grid-template-columns: 1fr 1fr ;
+        grid-template-columns: 0.8fr 1fr ;
         align-items: center;
         color: #fff;
         font-size: 1em;
