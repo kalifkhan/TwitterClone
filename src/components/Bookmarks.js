@@ -17,10 +17,11 @@ const Bookmarks = () => {
 
     console.log(bookMarkedList)
   return (
-    <div className='bookmarkConatiner'>Bookmarks
+    <div className='bookmarkConatiner'>
+      <div className='emptymsg'> Bookmarks </div>
       {bookMarkedList.map( (tw) => <Book content ={tw.msg} id={tw.id}>  </Book> )}
     </div>
   )
-}
+} 
 
 export default Bookmarks

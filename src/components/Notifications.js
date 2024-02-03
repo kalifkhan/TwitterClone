@@ -2,7 +2,7 @@ import React from 'react'
 
 const Notifications = () => {
   return (
-    <div>Notifications</div>
+    <div className='emptymsg'>Why did the computer catch a cold? It left its Windows open!</div>
   )
 }
 

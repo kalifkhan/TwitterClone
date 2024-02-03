@@ -11,3 +11,19 @@
     color: rgb(248, 238, 238);
     padding: 20px;
 }
+.emptymsg{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  width: 80%;
+  background-color: #f7afb5; /* Light red background color */
+  color: #721c24; /* Dark red text color */
+  font-size: 20px;
+  border: 1px solid #f5a3ab; /* Darker red border */
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
