@@ -28,19 +28,19 @@ function Copyright(props) {
     </Typography>
   );
 }
-
 // TODO remove, this demo shouldn't need to reset the theme.
 
 const defaultTheme = createTheme();
 
 export default function SignInSide({ setIsAuthenticated }) {
-  const {state , dispatch} = useNewTwitteContext();
+  const { state, dispatch } = useNewTwitteContext();
 
   const [username, setUserName] = React.useState();
   const [pwd, setPsd] = React.useState();
   const passd = React.useRef(null);
   const user = React.useRef(null);
   const [loginSuccess, setLoginSuccess] = React.useState(false);
+  const [errorMsgforSigIn, setErrormsg] = React.useState('');
 
   const navigate = useNavigate()
 
@@ -51,15 +51,21 @@ export default function SignInSide({ setIsAuthenticated }) {
   };
   const handleSignIn = (event) => {
     console.log("signIn button Clicked");
-    setUserName(user.current.value);
-    setPsd(passd.current.value)
-    setLoginSuccess(true);
+    const us = user.current.value
+    const ps = passd.current.value
+    if (us.length >= 2 && ps.length >= 7) {
+      setUserName(us);
+      setPsd(ps)
+      setLoginSuccess(true);
+    } else {
+      setErrormsg("Enter valid username and password(length should be more then 8 char)")
+    }
   }
   React.useEffect(() => {
     if (username && pwd) {
       localStorage.setItem("username", username)
       localStorage.setItem("loginSuccess", loginSuccess.toString());
-      dispatch({type: "ADDUSERNAME" , payload: username})
+      dispatch({ type: "ADDUSERNAME", payload: username })
       setIsAuthenticated(true);
     }
 
@@ -67,7 +73,7 @@ export default function SignInSide({ setIsAuthenticated }) {
 
   return (
     <ThemeProvider theme={defaultTheme} >
-      <Grid container component="main" sx={{ width: '150vh',marginTop: '50px' ,  justifyContent: 'center', alignItems: 'center' }}   >
+      <Grid container component="main" sx={{ width: '150vh', marginTop: '50px', justifyContent: 'center', alignItems: 'center' }}   >
         <CssBaseline />
         <Grid
           item
@@ -100,13 +106,14 @@ export default function SignInSide({ setIsAuthenticated }) {
               Sign in
 
             </Typography>
+            {errorMsgforSigIn && <p style={{ color: "red" }}> {errorMsgforSigIn} </p>}
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
               <TextField
                 margin="normal"
                 required
                 fullWidth
                 id="email"
-                label="Username/Email address"
+                label="Username"
                 name="email"
                 autoComplete="email"
                 autoFocus
