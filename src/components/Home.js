@@ -68,8 +68,12 @@ const Home = () => {
     // </div>
     <div>
         <div className='conatiner-center-curT'>
-          {curTwwites.id ? <Card title={'recent twitte'} content={curTwwites.msg} id={curTwwites.id}></Card> 
-          : <Card content={"enter your first twitte"}> </Card>  
+          {curTwwites.id ?  <Card title={'recent twitte'} content={curTwwites.msg} id={curTwwites.id}></Card> 
+          : <div> <Card style={{ 
+            backgroundColor: "rgba(255, 0, 0, 0.5)", /* Semi-transparent red */
+            backdropFilter: "blur(10px)" /* Adjust the blur intensity as needed */
+          }} content={"enter your first twitte"}> </Card>
+            </div> 
   }   
   </div>
     </div>
