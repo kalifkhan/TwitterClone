@@ -68,16 +68,15 @@ const Home = () => {
     //   </div>
     // </div>
     <div>
-        <div className='container'> 
-          Click here for the First Twitte
-          <Link to='explore'> twitte here </Link>
-        </div>
+        { !curTwwites.id ? <div className='containerForTW'> 
+        <Link to='explore'> Click here for the First Tweet </Link>
+        </div> : '' }
         <div className='conatiner-center-curT'>
           {curTwwites.id ?  <Card title={'recent twitte'} content={curTwwites.msg} id={curTwwites.id}></Card> 
           : <div> <Card style={{ 
             backgroundColor: "rgba(255, 0, 0, 0.5)", /* Semi-transparent red */
             backdropFilter: "blur(10px)" /* Adjust the blur intensity as needed */
-          }} content={"enter your first twitte"}> </Card>
+          }} content={"No tweets yet"}> </Card>
             </div> 
   }   
   </div>

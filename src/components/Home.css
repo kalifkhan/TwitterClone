@@ -1,5 +1,4 @@
 .home-container {
-
     width: 100vh;
     height: 100vh;
     overflow: hidden;
@@ -54,6 +53,22 @@
      height: 48%;
      padding: 10px;
 }
-/* Your CSS file */
-
-/* Your CSS file */
+.containerForTW{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 80%;
+    background-color: #f7afb5; /* Light red background color */
+    font-size: 20px;
+    border: 1px solid #f5a3ab; /* Darker red border */
+    border-radius: 8px;
+    padding: 20px;
+    margin: 40px 0;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+.containerForTW:hover{
+    transform: scale(1.05);
+}
