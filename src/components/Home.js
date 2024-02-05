@@ -4,6 +4,7 @@ import { twitterIcon, SettingIcon } from './leftPane/icons';
 import { Card } from './Card';
 import axios from 'axios';
 import { useNewTwitteContext } from './ContextList/TwitterContext';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const { curTwwites } = useNewTwitteContext();
@@ -67,6 +68,10 @@ const Home = () => {
     //   </div>
     // </div>
     <div>
+        <div className='container'> 
+          Click here for the First Twitte
+          <Link to='explore'> twitte here </Link>
+        </div>
         <div className='conatiner-center-curT'>
           {curTwwites.id ?  <Card title={'recent twitte'} content={curTwwites.msg} id={curTwwites.id}></Card> 
           : <div> <Card style={{ 
