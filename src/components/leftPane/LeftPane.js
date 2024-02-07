@@ -60,7 +60,7 @@ const LeftPane = ({setIsAuthenticated}) => {
                         </div>
                         <div>
                             <div className='name'> {username} </div>
-                            <div className='id'> {username}{"@121"} </div>
+                            <div className='id'> {"@"}{username}{"121"} </div>
                         </div>
                     </button>
                 </footer>

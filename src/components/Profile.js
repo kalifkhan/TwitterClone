@@ -2,8 +2,14 @@
 
 import React from 'react';
 import './Profile.css'; // Make sure to create this CSS file
+import { useNewTwitteContext } from './ContextList/TwitterContext';
 
 const Profile = () => {
+
+  const {state} = useNewTwitteContext();
+  const username = state.userName;
+
+ 
   return (
     <div className="profile-container">
       <div className="profile-image">
@@ -13,8 +19,8 @@ const Profile = () => {
         />
       </div>
       <div className="profile-details">
-        <h2>John Doe</h2>
-        <p className='p-Id'>ID: @john_doe</p>
+        <h2>{username}</h2>
+        <p className='p-Id'>ID: {"@"}{username}{"121"}</p>
         <div className='profileData' >
         <p className='followers'>Followers: 1000</p>
         <p className='following'>Following: 500</p>
