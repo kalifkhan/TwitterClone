@@ -20,6 +20,7 @@ export const Card = ({ title, content, id , islike}) => {
 
   const handleLikes = () => {
     setLike(!like);
+    console.log("button liked")
   }
   const handleBookmarks=(id)=>{
     dispatch( { type: "ADDLIKESTOBOOKLIST" , id: id , islikevalue : true} )
@@ -29,7 +30,9 @@ export const Card = ({ title, content, id , islike}) => {
     <div className='card-container'>
       <div className='card-block'>
         <span className='card-username'> Kalifkhan  {twitterIcon}</span>
-        <text className='card-content'> {content} </text>
+        <p className='card-content'> {content} </p>
+      </div>
+      <div className='svgiconContainer'>
         <span className='svgicons'>
           <span>{messageIcon}</span>
           <span> {retweetIcon}</span>
@@ -37,7 +40,7 @@ export const Card = ({ title, content, id , islike}) => {
           <span className={like ? "likesicon" : ""} onClick={handleLikes}> {likesIcon}  </span>
           <span onClick={() => handleBookmarks(id)} > {bookmark}</span>
         </span>
-      </div>
+        </div>
     </div>
   )
 }
