@@ -45,7 +45,7 @@
 }
 
 .likesicon svg {
-    fill: #e0245e; /* Adjusted like color for active state */
+    fill: red; /* Adjusted like color for active state */
 }
 
 .card-username svg{
