@@ -12,6 +12,7 @@
     padding: 10px;
     display: flex;
     flex-direction: column;
+
     /* border: 2px solid #f08080; Light border color */
     border-radius: 8px;
     cursor: pointer;
@@ -31,6 +32,7 @@
   .bookContent {
     margin: 2px;
     color: #0a0af0; /* Dark blue color */
+
   }
   
   .bookmarkContainer {
