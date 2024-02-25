@@ -6,8 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 const Explore = () => {
   
-  const { curTwwites, updateCurTwwites , dispatch } = useNewTwitteContext();
-  
+  const { updateCurTwwites , dispatch } = useNewTwitteContext();
   const [newTw, setNewt] = useState('');
 
   const handleForm = (e) => {
@@ -37,7 +36,6 @@ const Explore = () => {
           }} />
           <button className='btn-submit' type='submit' > Submit </button>
         </form>
-
       </div>
     </div>
   )
