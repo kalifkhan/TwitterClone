@@ -47,19 +47,15 @@ const reducer = (state, action) => {
   }
 
 }
-
 const intiailState = {
   likesList: [],
   allTwittes: [],
   userName: localStorage.getItem('username'),
 };
-
-
 export const MyTProvider = (props) => {
   const [ListOfTwittes, setListofTwittes] = useState([]);
   const [curTwwites, setCurTwwites] = useState({});
   const [hitLikes, setHitLikes] = useState();
-
   const [state, dispatch] = useReducer(reducer, intiailState);
   const updateHitLikes = (newV) => {
     setHitLikes(newV);
@@ -72,14 +68,10 @@ export const MyTProvider = (props) => {
       setListofTwittes((prev) => [...prev, curTwwites])
     }
   }, [curTwwites])
-
-
-
   return (
     <newTwitterContext.Provider value={{ curTwwites, ListOfTwittes, updateCurTwwites, updateHitLikes, hitLikes, state, dispatch }}>
       {props.children}
     </newTwitterContext.Provider>
   );
 }
-
 export default newTwitterContext;
