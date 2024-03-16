@@ -6,11 +6,9 @@ import { fontSize } from '@mui/system';
 import { Curtains } from '@mui/icons-material';
 
 const Lists = () => {
-
   const {curTwwites} = useNewTwitteContext();
   const { state} = useNewTwitteContext();
   const listTw = state.allTwittes;
-
   return (
     <div className='listcontainer'>
      { curTwwites.id ? <div className='listitemcontainer'>
