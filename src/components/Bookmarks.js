@@ -12,10 +12,7 @@ const Bookmarks = () => {
     useEffect( ()=>{
           const likesOfTwittes = allTwittes.filter((item) => item.islike == true);
           setBookmarked(likesOfTwittes);
-
     } ,[])
-
-    console.log(bookMarkedList)
   return (
     <div className='bookmarkConatiner'>
       <div className='emptymsg'> Bookmarks </div>
