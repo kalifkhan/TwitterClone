@@ -45,7 +45,6 @@ const reducer = (state, action) => {
   else {
     return state
   }
-
 }
 const intiailState = {
   likesList: [],
