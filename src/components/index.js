@@ -1,7 +1,5 @@
 import { Bookmarks } from './Bookmarks';
-
 export {default as LeftPane} from './leftPane/LeftPane'; 
-
 export {default as Home} from './Home';
 export {default as Bookmarks} from './Bookmarks';
 export {default as Explore} from './Explore';
