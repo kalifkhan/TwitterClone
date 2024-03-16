@@ -24,8 +24,6 @@ const Explore = () => {
     dispatch( { type: "ADDTWITTES" , payload: newTW} )
     setNewt('');
   };
-  
-
   return (
     <div className='addnewT-container'>
       <div className='newT-container'>

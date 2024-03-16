@@ -52,21 +52,6 @@ const Home = () => {
     return buttons
   }
   return (
-    // <div className='home-container'>
-    //   <div>
-    //     <header className='home-header-container'>
-    //       <h2> twittes </h2>
-    //     </header>
-    //   </div>
-
-    //   <div className='content-container'>
-    //     {currentPage.map((tt) => (<Card title={tt.title} content={tt.body} id={tt.id}> </Card>))}
-    //     {/* <div > <span className='like-button'> {SettingIcon} </span></div> */}
-    //   </div>
-    //   <div>
-    //     <div className='pagenumber-container'> {pageNumaber()} </div>
-    //   </div>
-    // </div>
     <div>
         { !curTwwites.id ? <div className='containerForTW'> 
         <Link to='explore'> Click here for the First Tweet </Link>
