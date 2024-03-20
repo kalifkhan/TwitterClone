@@ -8,9 +8,7 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   const { curTwwites } = useNewTwitteContext();
-
   const [twitte, setTwitte] = useState([]);
-
   const [twitterData, setTwitterData] = useState([]);
   const [PageNumber, setNumberPage] = useState(1);
   const [totalitemsperPage, setTotalItemsPages] = useState(6);
