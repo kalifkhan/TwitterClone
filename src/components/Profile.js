@@ -1,15 +1,10 @@
-// Profile.js
-
 import React from 'react';
 import './Profile.css'; // Make sure to create this CSS file
 import { useNewTwitteContext } from './ContextList/TwitterContext';
 
 const Profile = () => {
-
   const {state} = useNewTwitteContext();
-  const username = state.userName;
-
- 
+  const username = state.userName; 
   return (
     <div className="profile-container">
       <div className="profile-image">
