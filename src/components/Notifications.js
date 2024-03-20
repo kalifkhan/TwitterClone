@@ -5,6 +5,4 @@ const Notifications = () => {
     <div className='emptymsg'>Why did the computer catch a cold? It left its Windows open!</div>
   )
 }
-
-
 export default Notifications
